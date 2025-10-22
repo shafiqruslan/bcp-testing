@@ -20,7 +20,8 @@ class BcpTestingServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Route::prefix('bcp-testing')
+        Route::prefix('api/bcp-testing')
+            ->middleware('api')
             ->as('bcp-testing.')
             ->group(function () {
                 $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
