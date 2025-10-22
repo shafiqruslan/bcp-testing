@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'shafiqruslan/bcp-testing',
+        'name' => 'shafiq/bcp-testing',
         'pretty_version' => '1.0.0',
         'version' => '1.0.0.0',
         'reference' => null,
@@ -1041,7 +1041,7 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
-        'shafiqruslan/bcp-testing' => array(
+        'shafiq/bcp-testing' => array(
             'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',
             'reference' => null,
