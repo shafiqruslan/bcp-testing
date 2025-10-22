@@ -1,0 +1,44 @@
+{
+    "name": "shafiq/bcp-testing",
+    "description": "Testing package for BCP",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Shafiq",
+            "email": "shafiqruslan@zakat.com.my"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Shafiqruslan\\BcpTesting\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shafiqruslan\\BcpTesting\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shafiqruslan\\BcpTesting\\BcpTestingServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {},
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
