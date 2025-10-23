@@ -27,7 +27,7 @@ class BcpTestingServiceProvider extends ServiceProvider
         $router->aliasMiddleware('bcp.api.key', ValidateApiKey::class);
 
         Route::prefix('api/bcp-testing')
-            ->middleware('api')
+            ->middleware('api', 'bcp.api.key')
             ->as('bcp-testing.')
             ->group(function () {
                 $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
