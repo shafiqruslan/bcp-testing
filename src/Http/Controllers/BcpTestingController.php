@@ -15,11 +15,14 @@ class BcpTestingController extends Controller
 
             $result = DB::connection($connectionName)->select('SELECT 1 as test FROM DUAL');
 
+            $connectionIp = config('database.connections.'.$connectionName.'.host') ?? 'null';
+            
             // Check if connection was successful
             if ($result) {
                 return response()->json([
                     'status' => 'success',
                     'message' => 'Oracle database connection successful',
+                    'connectionIp' => $connectionIp,
                     'data' => $result
                 ], 200);
             }

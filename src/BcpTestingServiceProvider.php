@@ -14,7 +14,11 @@ class BcpTestingServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Merge config so it's accessible via config('bcp-testing.enabled')
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/bcp-testing.php',
+            'bcp-testing'
+        );
     }
 
     /**
@@ -26,6 +30,12 @@ class BcpTestingServiceProvider extends ServiceProvider
         $router = $this->app->make(Router::class);
         $router->aliasMiddleware('bcp.api.key', ValidateApiKey::class);
 
+        // Merge config so it's accessible via config('bcp-testing.enabled')
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/bcp-testing.php',
+            'bcp-testing'
+        );
+        
         Route::prefix('api/bcp-testing')
             ->middleware('api', 'bcp.api.key')
             ->as('bcp-testing.')
