@@ -27,7 +27,7 @@ class ValidateApiKey
         }
 
         // Get allowed API key from config
-        $allowedKey = env('BCP_TESTING_API_KEY');
+        $allowedKey = config('bcp-testing.api_key');
 
         // Validate the API key
         if ($allowedKey !== $apiKey) {

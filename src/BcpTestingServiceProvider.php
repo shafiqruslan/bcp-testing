@@ -35,9 +35,9 @@ class BcpTestingServiceProvider extends ServiceProvider
             __DIR__ . '/../config/bcp-testing.php',
             'bcp-testing'
         );
-        
+
         Route::prefix('api/bcp-testing')
-            ->middleware('api', 'bcp.api.key')
+            ->middleware('api')
             ->as('bcp-testing.')
             ->group(function () {
                 $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
